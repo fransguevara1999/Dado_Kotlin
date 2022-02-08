@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Dado Giratorio</string>
+    <string name="nombre_boton">Lanzar </string>
+</resources>
