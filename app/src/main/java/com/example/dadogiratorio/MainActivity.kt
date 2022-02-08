@@ -11,15 +11,21 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         btn_lanzar.setOnClickListener{
+            //Tira el dado cuando inicies
             lanzardado()
         }
 
     }
-
+//Lanzar dado
     private fun lanzardado() {
+    //Crear dado de 6 numeros
         val dado1=dado(6)
+    //Lanzar dado
         val ladado1=dado1.lanzar()
+        print(ladado1)
+    //capturamos el identificador de la imagen para poder cambiar al lanzar el dado.
         val img_dado:ImageView=findViewById(R.id.Dado_img)
+    //imagenes contendrá todas las imagenes , ladado1 contiene el numero al hacer del 1 al 6.
         val imagenes=when(ladado1){
             1->R.drawable.dado_1
             2->R.drawable.dado_2
@@ -28,7 +34,10 @@ class MainActivity : AppCompatActivity() {
             5->R.drawable.dado_5
             else->R.drawable.dado_6
         }
+    //Al lanzar el dado se seleccionara una opcion y se agregara por medio de imagenes
+    //pasamos con setImageResource la imagen que queremos mostrar en este caso es por el random del 1 al 6.
         img_dado.setImageResource(imagenes)
+    //colocamos una descripcion para guardar el numero .
         img_dado.contentDescription=ladado1.toString()
 
        // val dadoImagen:ImageView=findViewById(R.id.Dado_img)
